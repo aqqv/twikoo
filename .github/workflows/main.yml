@@ -1,11 +1,14 @@
 name: Update and Sync Repositories
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 8 * * *'
   workflow_dispatch:
+
 jobs:
   update_release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
